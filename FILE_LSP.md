@@ -1717,6 +1717,20 @@ int main()
 		printf("failed to remove file\n");
 	}
 }
+
+#include<stdio.h>
+
+int main()
+{
+	if(rename("oldname.txt","newname.txt")==0)
+	{
+		printf("rename successfully\n");
+	}
+	else
+	{
+		printf("failed to rename file\n");
+	}
+}
 57. Develop a C program to move a file named "file.txt" to a directory named "Backup"?
 ```
 #include <stdio.h>
