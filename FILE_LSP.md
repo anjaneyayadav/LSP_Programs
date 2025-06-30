@@ -1933,6 +1933,8 @@ int main()
     return 0;
 }
 ```
+64. Develop a C program to change the permissions of a file named "file.txt" to read-only?
+```
 #include<stdio.h>
 #include<sys/stat.h>
 
@@ -1947,7 +1949,10 @@ int main()
 		printf("failure");
 	}
 }
-
+```
+65. Implement a C program to change the ownership of a file named "file.txt" to the user 
+"user1?
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -1978,7 +1983,9 @@ int main()
     }
     return 0;
 }
-
+```
+66. Write a C program to get the last modified timestamp of a file named "file.txt"?
+```
 #include<stdio.h>
 #include<sys/stat.h>
 #include<time.h>
@@ -1999,7 +2006,34 @@ int main()
 	}
 	return 0;
 }
+```
+67. Develop a C program to create a temporary file and write some data to it?
+```
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+	FILE *filename=tmpfile();
+
+	if(filename==NULL)
+	{
+		printf("failed to create file");
+		return 1;
+	}
+	fprintf(filename,"this is temporary data");
+
+	rewind(filename);
+
+	char buffer[100];
+	while(fgets(buffer,sizeof(buffer),filename)!=NULL)
+	{
+		printf("read from tmp file:%s",buffer);
+	}
+	fclose(filename);
+	return 0;
+}
+```
 68. Implement a C program to get the size of a file named "image.jpg"?
 ```
 #include <stdio.h>
@@ -2046,6 +2080,60 @@ int main()
     return 0;
 }
 ```
+70. Develop a C program to count the number of words in a file named "essay.txt"? 
+```
+#include<stdio.h>
+
+int main()
+{
+	FILE*file;
+	char ch;
+	int lines=0;
+
+	file=fopen("essay.txt","r");
+	if(file==NULL)
+	{
+		printf("failed to open file\n");
+		return 1;
+	}
+	while((ch=fgetc(file))!=EOF)
+	{
+		if(ch=='\n')
+		{
+			lines++;
+		}
+	}
+	fclose(file);
+
+	printf("%d lines of the file",lines);
+
+	return 0;
+}
+```
+71. Write a C program to create a symbolic link named "shortcut.txt" to a file named 
+"target.txt"? 
+```
+#include <stdio.h>
+#include <unistd.h>
+
+int main() 
+{
+    const char *target = "target.txt";
+    const char *linkname = "shortcut.txt";
+
+    if (symlink(target, linkname) == 0) 
+    {
+        printf("Symbolic link '%s' created pointing to '%s'\n", linkname, target);
+    } 
+    else
+    {
+        perror("Failed to create symbolic link");
+    }
+
+    return 0;
+}
+```
+
 72.Develop a C program to change the permissions of a file named "important.doc" to read and write for the owner only? 
 ```
 #include <stdio.h>
@@ -2085,6 +2173,49 @@ int main()
     }
 
     printf("Last access time of '%s': %s", filename, ctime(&st.st_atime));
+
+    return 0;
+}
+```
+74. Develop a C program to read and display the contents of a CSV file named "data.csv"?
+```
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+        FILE *yadav;
+        char suri[1024];
+
+        yadav=fopen("data.csv","r");
+        if(yadav==NULL)
+        {
+                printf("failed to open file");
+                return 1;
+        }
+        while(fgets(suri,sizeof(suri),yadav)!=NULL)
+        {
+                printf("%s",suri);
+        }
+        fclose(yadav);
+        return 0;
+}
+```
+75. Implement a C program to truncate a file named "file.txt" to a specified length?
+```
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+int main() {
+    const char *filename = "file.txt";
+    off_t length = 10;  // Truncate to 10 bytes
+
+    if (truncate(filename, length) == 0) {
+        printf("File '%s' truncated to %ld bytes.\n", filename, (long)length);
+    } else {
+        perror("Failed to truncate file");
+    }
 
     return 0;
 }
@@ -2181,6 +2312,113 @@ int main()
     return 0;
 }
 ```
+78. Implement a C program to read and display the contents of a binary file named 
+"binary.bin"?
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *file;
+    unsigned char buffer[1024];
+    size_t bytesRead;
+
+    file = fopen("binary.bin", "rb");
+    if (file == NULL)
+    {
+        perror("Failed to open file");
+        return 1;
+    }
+
+    printf("Contents of binary.bin (in hexadecimal):\n");
+
+    while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0)
+    {
+        for (size_t i = 0; i < bytesRead; i++)
+        {
+            printf("%02X ", buffer[i]);
+        }
+    }
+
+    printf("\n");
+    fclose(file);
+    return 0;
+}
+```
+79. Implement a C program to create a new directory named "Logs" and move all files with 
+the ".log" extension into it?
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int has_log_extension(const char *filename)
+{
+    const char *dot = strrchr(filename, '.');
+    return dot && strcmp(dot, ".log") == 0;
+}
+
+int main()
+{
+    DIR *dir;
+    struct dirent *entry;
+    struct stat st;
+
+    const char *logDir = "Logs";
+
+    if (stat(logDir, &st) == -1)
+    {
+        if (mkdir(logDir, 0777) == 0)
+        {
+            printf("Directory 'Logs' created successfully.\n");
+        }
+        else
+        {
+            perror("Failed to create 'Logs' directory");
+            return 1;
+        }
+    }
+
+    dir = opendir(".");
+    if (dir == NULL)
+    {
+        perror("Unable to open current directory");
+        return 1;
+    }
+
+    while ((entry = readdir(dir)) != NULL)
+    {
+        if (entry->d_type == DT_DIR)
+        {
+                continue;
+        }
+        if (!has_log_extension(entry->d_name))
+        {
+                continue;
+        }
+        char oldpath[1024];
+        char newpath[1024];
+        snprintf(oldpath, sizeof(oldpath), "./%s", entry->d_name);
+        snprintf(newpath, sizeof(newpath), "./%s/%s", logDir, entry->d_name);
+
+        if (rename(oldpath, newpath) == 0)
+        {
+            printf("Moved: %s -> %s\n", oldpath, newpath);
+        }
+        else
+        {
+            perror("Failed to move file");
+        }
+    }
+
+    closedir(dir);
+    return 0;
+}
+```
 80. Write a C program to check if a file named "config.ini" is writable?
 ```
 #include <stdio.h>
@@ -2202,6 +2440,53 @@ int main()
     return 0;
 }
 ```
+81. Develop a C program to read the contents of a text file named "instructions.txt" and 
+execute the instructions as shell commands?
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    FILE *file;
+    char command[1024];
+
+    file = fopen("instructions.txt", "r");
+    if (file == NULL)
+    {
+        perror("Unable to open instructions.txt");
+        return 1;
+    }
+
+    printf("Executing shell commands from instructions.txt:\n\n");
+
+    while (fgets(command, sizeof(command), file) != NULL)
+    {
+        command[strcspn(command, "\n")] = '\0';
+
+        if (strlen(command) == 0)
+        {
+                continue;
+        }
+        printf(">> %s\n", command);
+        int status = system(command);
+
+        if (status == -1)
+        {
+            perror("system() failed");
+        }
+        else
+        {
+            printf("Command executed with exit code: %d\n\n", WEXITSTATUS(status));
+        }
+    }
+
+    fclose(file);
+    return 0;
+}
+```
+
 82.Develop a C program to read data from a binary file named "data.bin" and display it in hexadecimal format? 
 ```
 #include <stdio.h>
@@ -2253,9 +2538,94 @@ int main()
     fclose(file);
     return 0;
 }
+```
+83. Develop a C program to recursively copy all files and directories from one directory to 
+another?
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
 
+void copy_file(const char *src, const char *dest) {
+    int in, out;
+    char buffer[4096];
+    ssize_t bytes;
 
+    in = open(src, O_RDONLY);
+    if (in < 0) {
+        perror(src);
+        return;
+    }
 
+    out = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (out < 0) {
+        perror(dest);
+        close(in);
+        return;
+    }
+
+    while ((bytes = read(in, buffer, sizeof(buffer))) > 0) {
+        write(out, buffer, bytes);
+    }
+
+    close(in);
+    close(out);
+}
+
+void copy_directory(const char *src, const char *dest) {
+    DIR *dir;
+    struct dirent *entry;
+    struct stat st;
+    char src_path[1024], dest_path[1024];
+
+    if (mkdir(dest, 0777) == -1 && errno != EEXIST) {
+        perror(dest);
+        return;
+    }
+
+    dir = opendir(src);
+    if (!dir) {
+        perror(src);
+        return;
+    }
+
+    while ((entry = readdir(dir)) != NULL) {
+        // Skip "." and ".."
+        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
+            continue;
+
+        snprintf(src_path, sizeof(src_path), "%s/%s", src, entry->d_name);
+        snprintf(dest_path, sizeof(dest_path), "%s/%s", dest, entry->d_name);
+
+        if (stat(src_path, &st) == 0) {
+            if (S_ISDIR(st.st_mode)) {
+                // Recursively copy subdirectory
+                copy_directory(src_path, dest_path);
+            } else if (S_ISREG(st.st_mode)) {
+                // Copy file
+                copy_file(src_path, dest_path);
+            }
+        }
+    }
+
+    closedir(dir);
+}
+
+int main() {
+    const char *source_dir = "SourceDir";
+    const char *destination_dir = "DestDir";
+
+    copy_directory(source_dir, destination_dir);
+    printf("Directory '%s' copied to '%s' successfully.\n", source_dir, destination_dir);
+
+    return 0;
+}
+```
 
 
 
