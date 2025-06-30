@@ -1790,6 +1790,8 @@ int main()
     return 0;
 }
 ```
+58. Implement a C program to list all files and directories in the current directory? 
+```
 #include<stdio.h>
 #include<dirent.h>
 
@@ -1811,15 +1813,16 @@ int main()
 	close(dr);
 	return 0;
 }
-
+```
+59. Write a C program to get the size of a file named "data.txt"? 
+```
 #include<stdio.h>
-
 int main()
 {
 	FILE *fp;
 	long size;
 
-	fp=fopen("file.txt","r");
+	fp=fopen("data.txt","r");
 	if(fp==NULL)
 	{
 		perror("error open file\n");
@@ -1830,11 +1833,13 @@ int main()
 	size=ftell(fp);
 	
 	fclose(fp);
-	printf("bytes of the file.txt %ld",size);
+	printf("bytes of the data.txt %ld",size);
 	return 0;
 }
-
-
+```
+60. Develop a C program to create a new directory named "Pictures" in the parent 
+directory?
+```
 #include<stdio.h>
 #include<sys/stat.h>
 #include<sys/types.h>
@@ -1855,7 +1860,9 @@ int main()
 	}
 	return 0;
 }
-
+```
+61. Develop a C program to count the number of lines in a file named "log.txt"? 
+```
 #include<stdio.h>
 
 int main()
@@ -1864,7 +1871,7 @@ int main()
 	char ch;
 	int lines=0;
 
-	file=fopen("data.txt","r");
+	file=fopen("log.txt","r");
 	if(file==NULL)
 	{
 		printf("failed to open file\n");
@@ -1883,7 +1890,27 @@ int main()
 
 	return 0;
 }
+```
+62. Implement a C program to append "Goodbye!" to the end of an existing file named 
+"message.txt"?
+```
+#include<stdio.h>
 
+int main()
+{
+	FILE*file;
+	file=fopen("message.txt","a");
+	if(file==NULL)
+	{
+		printf("failed to open file\n");
+	}
+	fprintf(file,"GOODBYE!\n");
+	fclose(file);
+
+	printf("message written to file successfully");
+	return 0;
+}
+```
 63,71. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
 ```
 #include <stdio.h>
