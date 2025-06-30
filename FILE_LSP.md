@@ -1625,6 +1625,22 @@ int main()
     return 0;
 }
 ```
+
+#include<stdio.h>
+#include<unistd.h>
+
+int main()
+{
+	if(access("sample.txt",F_OK)==0)
+	{
+		printf("sample.txt exist in the current directory\n");
+	}
+	else
+	{
+		printf("not in current directory\n");
+	}
+}
+
 52. Implement a C program to open a file named "data.txt" in read mode and display its contents?
 ```
 #include <stdio.h>
