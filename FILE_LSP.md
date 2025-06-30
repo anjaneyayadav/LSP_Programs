@@ -1702,6 +1702,21 @@ int main()
 	close(fd);
 }
 ```
+#include<stdio.h>
+#include<unistd.h>
+
+int main()
+{
+	const *filename="delete_me.txt";
+	if(remove(filename==0))
+	{
+		printf("file removed successfully\n",filename);
+	}
+	else
+	{
+		printf("failed to remove file\n");
+	}
+}
 57. Develop a C program to move a file named "file.txt" to a directory named "Backup"?
 ```
 #include <stdio.h>
