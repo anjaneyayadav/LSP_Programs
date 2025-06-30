@@ -1979,6 +1979,27 @@ int main()
     return 0;
 }
 
+#include<stdio.h>
+#include<sys/stat.h>
+#include<time.h>
+
+int main()
+{
+	const char*filename="file.txt";
+	struct stat fileInfo;
+
+	if(stat(filename,&fileInfo)!=0)
+	{
+		printf("could not get file information");
+		return 1;
+	}
+	char*mTime=ctime(&fileInfo.st_mtime);
+	{
+		printf("last modified file information %s %s",filename,mTime);
+	}
+	return 0;
+}
+
 68. Implement a C program to get the size of a file named "image.jpg"?
 ```
 #include <stdio.h>
