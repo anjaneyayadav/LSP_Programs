@@ -1625,9 +1625,7 @@ int main()
     return 0;
 }
 ```
-51. Develop a C program to check if a file named "file.txt" exists in the current directory?
- 
-53. Implement a C program to open a file named "data.txt" in read mode and display its contents?
+52. Implement a C program to open a file named "data.txt" in read mode and display its contents?
 ```
 #include <stdio.h>
 
@@ -1654,6 +1652,35 @@ int main()
     return 0;
 }
 ```
+#include<stdio.h>
+#include<fcntl.h>
+#include<sys/types.h>
+#include<unistd.h>
+#include<string.h>
+
+int main()
+{
+	int fd;
+	int ret;
+	char buf[64]="Hello,World";
+
+	fd=open("file.txt",O_WRONLY|O_CREAT,0755);
+	if(fd<0)
+	{
+		printf("File doesn't open\n");
+		return;
+	}
+	printf("File open successfully\n");
+	ret=write(fd,buf,strlen(buf));
+	if(ret<0)
+	{
+		printf("File doesn't read\n");
+		return;
+	}
+	buf[ret]=NULL;
+	printf("%d bytes from file",ret,buf);
+	close(fd);
+}
 
 57. Develop a C program to move a file named "file.txt" to a directory named "Backup"?
 ```
