@@ -84,7 +84,7 @@ int main()
 	}
 }
 ```
-4,51. Write a C program to check if a file named "sample.txt " exists in the current directory?
+4. Write a C program to check if a file named "sample.txt " exists in the current directory?
 ```
 #include<stdio.h>
 #include<unistd.h>
@@ -101,7 +101,7 @@ int main()
 	}
 }
 ```
-5,55. Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
+5. Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
 ```
 #include<stdio.h>
 
@@ -117,7 +117,7 @@ int main()
 	}
 }
 ```
-6,54. Implement a C program to delete a file named "delete_me.txt"?
+6. Implement a C program to delete a file named "delete_me.txt"?
 ```
 #include<stdio.h>
 #include<unistd.h>
@@ -136,7 +136,7 @@ int main()
 }
 ```
 
-7,56. Write a C program to copy the contents of one file to another?
+7. Write a C program to copy the contents of one file to another?
 ```
 #include<stdio.h>
 
@@ -192,7 +192,7 @@ int main()
 }
 ```
 
-9,58.Implement a C program to list all files in the current directory?
+9.Implement a C program to list all files in the current directory?
 ```
 #include<stdio.h>
 #include<dirent.h>
@@ -217,7 +217,7 @@ int main()
 }
 ```
 
-10,59. Write a C program to get the size of a file named "file.txt"?
+10. Write a C program to get the size of a file named "file.txt"?
 ```
 #include<stdio.h>
 
@@ -270,7 +270,7 @@ int main()
 	}
 }
 ```
-12,60. Implement a C program to create a new directory named "Backup" in the parent directory?
+12. Implement a C program to create a new directory named "Backup" in the parent directory?
 ```
 
 #include<stdio.h>
@@ -388,7 +388,7 @@ int main() {
     return 0;
 }
 ```
-15,61,70. Implement a C program to count the number of lines in a file named "data.txt?
+15. Implement a C program to count the number of lines in a file named "data.txt?
 ```
 #include<stdio.h>
 
@@ -419,7 +419,7 @@ int main()
 }
 ```
 
-16,62. Write a C program to append "Goodbye!" to the end of an existing file named  "message.txt"?
+16. Write a C program to append "Goodbye!" to the end of an existing file named  "message.txt"?
 ```
 #include<stdio.h>
 
@@ -439,7 +439,7 @@ int main()
 }
 ```
 
-17,64. Implement a C program to change the permissions of a file named "file.txt" to read only? 
+17. Implement a C program to change the permissions of a file named "file.txt" to read only? 
 ```
 #include<stdio.h>
 #include<sys/stat.h>
@@ -457,7 +457,7 @@ int main()
 }
 ```
 
-18,65.Write a C program to change the ownership of a file named "file.txt" to the user "user1"? 
+18.Write a C program to change the ownership of a file named "file.txt" to the user "user1"? 
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -491,7 +491,7 @@ int main()
 }
 ```
 
-19,66. Develop a C program to get the last modified timestamp of a file named "file.txt"?
+19. Develop a C program to get the last modified timestamp of a file named "file.txt"?
 ```
 #include<stdio.h>
 #include<sys/stat.h>
@@ -514,7 +514,7 @@ int main()
 	return 0;
 }
 ```
-20,67. Implement a C program to create a temporary file and write some data to it?
+20. Implement a C program to create a temporary file and write some data to it?
 ```
 #include<stdio.h>
 #include<stdlib.h>
@@ -595,7 +595,7 @@ int main()
 }
 ```
 
-23,74. Implement a C program to read and display the contents of a CSV file named "data.csv"? 
+23. Implement a C program to read and display the contents of a CSV file named "data.csv"? 
 ```
 #include<stdio.h>
 #include<stdlib.h>
@@ -697,7 +697,7 @@ int main() {
 }
 ```
 
-26,83. Implement a C program to recursively copy all files and directories from one directory to another?
+26. Implement a C program to recursively copy all files and directories from one directory to another?
 ``` 
 #include <stdio.h>
 #include <stdlib.h>
@@ -887,7 +887,7 @@ int main()
 }
 ```
 
-30,75. Write a C program to truncate a file named "file.txt" to a specified length?
+30. Write a C program to truncate a file named "file.txt" to a specified length?
 ```
 #include <stdio.h>
 #include <unistd.h>
@@ -1141,7 +1141,7 @@ int main()
 }
 ```
 
-39,78. Write a C program to read and display the contents of a binary file named "binary.bin"?
+39. Write a C program to read and display the contents of a binary file named "binary.bin"?
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -1255,7 +1255,7 @@ int main()
 }
 ```
 
-42,79. Write a C program to create a new directory named "Logs" and move all files with the ".log" extension into it? 
+42. Write a C program to create a new directory named "Logs" and move all files with the ".log" extension into it? 
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -1350,7 +1350,7 @@ int main()
 }
 ```
 
-44,81. Implement a C program to read the contents of a text file named "instructions.txt" and execute the instructions as shell commands? 
+44. Implement a C program to read the contents of a text file named "instructions.txt" and execute the instructions as shell commands? 
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -1911,7 +1911,7 @@ int main()
 	return 0;
 }
 ```
-63,71. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
+63. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
 ```
 #include <stdio.h>
 #include <unistd.h>
@@ -2258,7 +2258,7 @@ int main()
 }
 ```
 
-77,84. Develop a C program to get the file type (regular file, directory, symbolic link,etc.) of a given path?
+77. Develop a C program to get the file type (regular file, directory, symbolic link,etc.) of a given path?
 ```
 #include <stdio.h>
 #include <sys/stat.h>
@@ -2486,7 +2486,6 @@ int main()
     return 0;
 }
 ```
-
 82.Develop a C program to read data from a binary file named "data.bin" and display it in hexadecimal format? 
 ```
 #include <stdio.h>
@@ -2626,8 +2625,60 @@ int main() {
     return 0;
 }
 ```
+84. Develop a C program to get the file type (regular file, directory, symbolic link, etc.) of a given path? 
+```
+#include <stdio.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
+int main()
+{
+    const char *path = "example.txt"; 
+    struct stat st;
 
+    if (lstat(path, &st) == -1) 
+    {
+        perror("Failed to get file status");
+        return 1;
+    }
+
+    printf("File type of '%s': ", path);
+    if (S_ISREG(st.st_mode))
+    {
+        printf("Regular file\n");
+    }
+    else if (S_ISDIR(st.st_mode))
+    {
+        printf("Directory\n");
+    }
+    else if (S_ISLNK(st.st_mode))
+    {
+        printf("Symbolic link\n");
+    }
+    else if (S_ISCHR(st.st_mode))
+    {
+        printf("Character device\n");
+    }
+    else if (S_ISBLK(st.st_mode))
+    {
+        printf("Block device\n");
+    }
+    else if (S_ISFIFO(st.st_mode))
+    {
+        printf("FIFO (named pipe)\n");
+    }
+    else if (S_ISSOCK(st.st_mode))
+    {
+        printf("Socket\n");
+    }
+    else
+    {
+        printf("Unknown type\n");
+    }
+
+    return 0;
+}
+```
 
 
 
