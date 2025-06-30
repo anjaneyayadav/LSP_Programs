@@ -1702,6 +1702,8 @@ int main()
 	close(fd);
 }
 ```
+54. Develop a C program to delete a file named "delete_me.txt" from the current directory?
+``` 
 #include<stdio.h>
 #include<unistd.h>
 
@@ -1717,9 +1719,10 @@ int main()
 		printf("failed to remove file\n");
 	}
 }
-
+```
+55. Implement a C program to rename a file from "old_name.txt" to "new_name.txt"? 
+```
 #include<stdio.h>
-
 int main()
 {
 	if(rename("oldname.txt","newname.txt")==0)
@@ -1731,6 +1734,41 @@ int main()
 		printf("failed to rename file\n");
 	}
 }
+```
+56. Write a C program to copy the contents of one file to another file? 
+```
+#include<stdio.h>
+
+int main()
+{
+	FILE *src,*dest;
+	int ch;
+
+	src=fopen("source file.txt","r");
+	if(src==NULL)
+	{
+		perror("Failed to open source file\n");
+		return 1;
+	}
+	dest=fopen("destination file.txt","w");
+	if(dest==NULL)
+	{
+		perror("failed to open destination file\n");
+		fclose(src);
+		return 1;
+	}
+	while((ch==fgetc(src))!=EOF)
+	{
+		fputc(ch,dest);
+	}
+	printf("file copied successfully\n");
+	
+	fclose(src);
+	fclose(dest);
+	
+	return 0;
+}
+```
 57. Develop a C program to move a file named "file.txt" to a directory named "Backup"?
 ```
 #include <stdio.h>
