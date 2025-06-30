@@ -1812,6 +1812,28 @@ int main()
 	return 0;
 }
 
+#include<stdio.h>
+
+int main()
+{
+	FILE *fp;
+	long size;
+
+	fp=fopen("file.txt","r");
+	if(fp==NULL)
+	{
+		perror("error open file\n");
+		return 1;
+	}
+	fseek(fp,0,SEEK_END);
+
+	size=ftell(fp);
+	
+	fclose(fp);
+	printf("bytes of the file.txt %ld",size);
+	return 0;
+}
+
 63,71. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
 ```
 #include <stdio.h>
