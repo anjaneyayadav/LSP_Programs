@@ -1790,6 +1790,27 @@ int main()
     return 0;
 }
 ```
+#include<stdio.h>
+#include<dirent.h>
+
+int main()
+{
+	struct dirent *de;
+	DIR *dr=opendir("..");
+	if(dr==NULL)
+	{
+		perror("could not open current directory\n");
+		return 1;
+	}
+	printf("file in current directory\n");
+
+	while((de=readdir(dr))!=NULL)
+	{
+		printf("%s\n",de->d_name);
+	}
+	close(dr);
+	return 0;
+}
 
 63,71. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
 ```
