@@ -1834,6 +1834,28 @@ int main()
 	return 0;
 }
 
+
+#include<stdio.h>
+#include<sys/stat.h>
+#include<sys/types.h>
+
+int main()
+{
+	const char*path="../Backup";
+
+	int status=mkdir(path,0777);
+
+	if(status==0)
+	{
+		printf("Backup directory created\n");
+	}
+	else
+	{
+		printf("not creating");
+	}
+	return 0;
+}
+
 63,71. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
 ```
 #include <stdio.h>
