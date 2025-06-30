@@ -1625,7 +1625,8 @@ int main()
     return 0;
 }
 ```
-
+51. Develop a C program to check if a file named "file.txt" exists in the current directory?
+``` 
 #include<stdio.h>
 #include<unistd.h>
 
@@ -1640,7 +1641,7 @@ int main()
 		printf("not in current directory\n");
 	}
 }
-
+```
 52. Implement a C program to open a file named "data.txt" in read mode and display its contents?
 ```
 #include <stdio.h>
