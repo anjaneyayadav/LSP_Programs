@@ -1652,6 +1652,9 @@ int main()
     return 0;
 }
 ```
+53. Write a C program to create a new text file named "output.txt" and write "Hello, World!" 
+to it?
+```
 #include<stdio.h>
 #include<fcntl.h>
 #include<sys/types.h>
@@ -1681,7 +1684,7 @@ int main()
 	printf("%d bytes from file",ret,buf);
 	close(fd);
 }
-
+```
 57. Develop a C program to move a file named "file.txt" to a directory named "Backup"?
 ```
 #include <stdio.h>
