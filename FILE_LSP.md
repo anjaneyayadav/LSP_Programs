@@ -1856,6 +1856,34 @@ int main()
 	return 0;
 }
 
+#include<stdio.h>
+
+int main()
+{
+	FILE*file;
+	char ch;
+	int lines=0;
+
+	file=fopen("data.txt","r");
+	if(file==NULL)
+	{
+		printf("failed to open file\n");
+		return 1;
+	}
+	while((ch=fgetc(file))!=EOF)
+	{
+		if(ch=='\n')
+		{
+			lines++;
+		}
+	}
+	fclose(file);
+
+	printf("%d lines of the file",lines);
+
+	return 0;
+}
+
 63,71. Write a C program to create a symbolic link named "link.txt" to a file named "target.txt"? 
 ```
 #include <stdio.h>
