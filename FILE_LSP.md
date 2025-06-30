@@ -1933,6 +1933,20 @@ int main()
     return 0;
 }
 ```
+#include<stdio.h>
+#include<sys/stat.h>
+
+int main()
+{
+	if(chmod("file.txt",0777)==0)
+	{
+		printf("success");
+	}
+	else
+	{
+		printf("failure");
+	}
+}
 
 68. Implement a C program to get the size of a file named "image.jpg"?
 ```
