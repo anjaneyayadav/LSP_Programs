@@ -743,55 +743,57 @@ using sched_setscheduler().
 #include <string.h>
 #include <sys/wait.h>
 
-int main() {
+int main()
+{
     pid_t pid;
     struct sched_param schedParam;
 
     pid = fork();
 
-    if (pid < 0) {
+    if (pid < 0)
+    {
         perror("fork failed");
         exit(EXIT_FAILURE);
     }
 
-    if (pid == 0) {
-        // Child process
+    if (pid == 0)
+    {
         printf("Child PID = %d\n", getpid());
 
-        // Set priority
         schedParam.sched_priority = 10;
 
-        // Try setting SCHED_RR (real-time round-robin)
-        if (sched_setscheduler(0, SCHED_RR, &schedParam) == -1) {
+        if (sched_setscheduler(0, SCHED_RR, &schedParam) == -1)
+        {
             perror("sched_setscheduler failed (need root?)");
-        } else {
+        }
+        else
+        {
             printf("Child: Scheduling policy changed to SCHED_RR with priority 10\n");
         }
-
-        // Confirm current policy
         int policy = sched_getscheduler(0);
-        if (policy == -1) {
+        if (policy == -1)
+        {
             perror("sched_getscheduler failed");
-        } else {
+        }
+        else
+        {
             printf("Child: Current scheduling policy = %s\n",
                    policy == SCHED_OTHER ? "SCHED_OTHER" :
                    policy == SCHED_FIFO ? "SCHED_FIFO" :
                    policy == SCHED_RR   ? "SCHED_RR" : "UNKNOWN");
         }
-
-        // Simulate work
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++)
+        {
             printf("Child: Running iteration %d...\n", i + 1);
             sleep(1);
         }
-
         exit(0);
-    } else {
-        // Parent process
+    }
+    else
+    {
         wait(NULL);
         printf("Parent: Child has finished execution.\n");
     }
-
     return 0;
 }
 ```
