@@ -50,6 +50,8 @@ It was released in **1990** and developed by a group of electronics companies wo
 
 ## JTAG Connector
 
+![image](https://github.com/user-attachments/assets/9fa0cd5f-b139-4032-9b2d-646356423ada)
+
 This is a JTAG (Joint Test Action Group) connector, which is used to interface an external debugger or programmer with a microcontroller or processor.
 
 ## Key Features:
@@ -86,7 +88,8 @@ This JTAG connector allows engineers and developers to directly access the inter
 
 This document explains the JTAG (Joint Test Action Group) architecture using the reference diagram step by step.
 
-[Image: JTAG Architecture]
+![image](https://github.com/user-attachments/assets/d1ea4280-beb5-4407-ba56-0a4fd62d2679)
+
 
 - **✅ Core Logic
 - This is the main functional block of the chip.
