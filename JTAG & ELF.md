@@ -82,6 +82,65 @@ This is a JTAG (Joint Test Action Group) connector, which is used to interface a
 
 This JTAG connector allows engineers and developers to directly access the internal logic of chips for testing and debugging without removing the chip from the board.
 
+# JTAG Architecture Explained
+
+This document explains the JTAG (Joint Test Action Group) architecture using the reference diagram step by step.
+
+[Image: JTAG Architecture]
+
+- **✅ Core Logic
+- This is the main functional block of the chip.
+- It performs all primary operations (processing, control, etc.).
+
+- **✅ I/P Pads
+- These are Input/Output pads through which the chip communicates with external components.
+- Each pad connects to a Boundary Scan Cell.
+
+- **✅ Boundary Scan Cells
+- These are flip-flops or latches placed at each I/O pin.
+- Used to capture and force signals during testing.
+- They help detect open circuits, short circuits, and soldering issues.
+
+- **✅ Boundary Scan Path
+- All boundary scan cells are connected in a serial chain.
+- This chain is known as the Boundary Scan Path.
+- Test data moves through this path to check I/O pin functionality.
+
+- **✅ TDI (Test Data In)
+- This is the input pin for sending test data into the chip.
+- It provides serial data to instruction and data registers.
+
+- **✅ TDO (Test Data Out)
+- This is the output pin where the test result data comes out.
+- Used to observe test responses from the chip.
+
+- **✅ Instruction Register
+- This register receives commands from the test controller.
+- It tells the chip which operation to perform (e.g., run boundary scan, bypass, or access ID).
+
+- **✅ BYPASS Register
+- A single-bit register that allows data to bypass the chip.
+- Used when testing a chain of multiple devices, to reduce delay.
+
+- **✅ ID Register
+- Stores a unique identification code for the chip.
+- Helps recognize the specific device under test.
+
+- **✅ Other Registers
+- May include user-defined or custom registers.
+- Used for advanced or specific testing features.
+
+- **✅ Test Access Port (TAP) Controller
+- Acts as the brain of the JTAG interface.
+- Controls access to registers based on input signals.
+- Responds to TCK (clock), TMS (mode select), TRST (reset).
+
+- **✅ Control Pins
+- TCK (Test Clock): Provides clock signal to drive JTAG operations.
+- TMS (Test Mode Select): Decides the state transitions of the TAP controller.
+- TRST (Test Reset): Optional reset for TAP logic.
+- TDI/TDO: Serial input/output for data movement.
+
 # 📁 What is ELF in Linux?
 
 **ELF (Executable and Linkable Format)** is a standard file format used in Linux/Unix systems for:
