@@ -159,23 +159,32 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 # 📁 ELF File Format Diagram
 
 | ELF Header | ← Identity & metadata
+
 +--------------------------+
 
-
 | Program Header Table | ← Used at runtime (by loader)
+
 +--------------------------+
 
 | Section Header Table | ← Used at link/compile time
+
 +--------------------------+
 
 | Sections / Segments |
+
 | +----------------------+|
 | | .text → Code ||
+
 | | .data → Init data ||
+
 | | .bss → Uninit ||
+
 | | .rodata → Const data||
+
 | | .symtab → Symbols ||
+
 | | .strtab → Strings ||
+
 | | .rel/.rela→ Relocs ||
 
 ---
