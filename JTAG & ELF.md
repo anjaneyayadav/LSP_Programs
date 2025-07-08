@@ -52,7 +52,8 @@ It was released in **1990** and developed by a group of electronics companies wo
 
 This is a JTAG (Joint Test Action Group) connector, which is used to interface an external debugger or programmer with a microcontroller or processor.
 
-![image](https://github.com/user-attachments/assets/f0765263-d469-4d30-ac7d-b5bc5d0efc4a)
+![image](https://github.com/user-attachments/assets/452f9d9a-a8f1-4be2-a042-aef6870e6e4d)
+
 
 
 ## Key Features:
