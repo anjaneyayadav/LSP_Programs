@@ -84,7 +84,7 @@ This is a JTAG (Joint Test Action Group) connector, which is used to interface a
 
 This JTAG connector allows engineers and developers to directly access the internal logic of chips for testing and debugging without removing the chip from the board.
 
-# JTAG Architecture Explained
+# JTAG Architecture
 
 This document explains the JTAG (Joint Test Action Group) architecture using the reference diagram step by step.
 
