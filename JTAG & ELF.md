@@ -173,6 +173,7 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 | Sections / Segments |
 
 | +----------------------+|
+
 | | .text → Code ||
 
 | | .data → Init data ||
