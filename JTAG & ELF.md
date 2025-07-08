@@ -160,10 +160,14 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 
 | ELF Header | ← Identity & metadata
 +--------------------------+
+
+
 | Program Header Table | ← Used at runtime (by loader)
 +--------------------------+
+
 | Section Header Table | ← Used at link/compile time
 +--------------------------+
+
 | Sections / Segments |
 | +----------------------+|
 | | .text → Code ||
