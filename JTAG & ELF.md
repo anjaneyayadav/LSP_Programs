@@ -48,6 +48,40 @@ It was released in **1990** and developed by a group of electronics companies wo
 
 ---
 
+## JTAG Connector
+
+This is a JTAG (Joint Test Action Group) connector, which is used to interface an external debugger or programmer with a microcontroller or processor.
+
+## Key Features:
+
+- **✅ Ribbon Cable**
+- A flat cable with multiple wires that carry JTAG signals.
+- Connects the debugger/programmer to the target hardware.
+
+- **✅ Connector Pins**
+- Typically includes the following signals:
+  - TCK (Test Clock)
+  - TMS (Test Mode Select)
+  - TDI (Test Data In)
+  - TDO (Test Data Out)
+  - TRST (Test Reset) – optional
+  - GND (Ground)
+  - VCC (Target Power Reference) – optional
+
+- **✅ Pin Header**
+- Connects directly to the JTAG port on the microcontroller board.
+- Ensures stable and secure contact for signal transmission.
+
+- **✅ Usage**
+- Used for programming, debugging, boundary scan, and hardware testing.
+- Common in embedded systems, development boards, and production-level testing.
+
+- **✅ Design**
+- Compact and reliable.
+- Supports multi-pin connections with correct signal alignment.
+
+This JTAG connector allows engineers and developers to directly access the internal logic of chips for testing and debugging without removing the chip from the board.
+
 # 📁 What is ELF in Linux?
 
 **ELF (Executable and Linkable Format)** is a standard file format used in Linux/Unix systems for:
