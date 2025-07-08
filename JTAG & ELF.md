@@ -88,7 +88,7 @@ This JTAG connector allows engineers and developers to directly access the inter
 
 This document explains the JTAG (Joint Test Action Group) architecture using the reference diagram step by step.
 
-![JTAG Architecture Small](jtag_architecture_small.png)
+![jtag_architecture_small](https://github.com/user-attachments/assets/051b31c0-3eb5-4d55-bd34-dc41bd4a05e3)
 
 - **✅ Core Logic
 - This is the main functional block of the chip.
