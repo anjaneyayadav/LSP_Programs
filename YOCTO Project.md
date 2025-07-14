@@ -145,6 +145,7 @@ This is the *heart of the process*, made up of:
 
 ✅ Result: A lightweight, efficient, and customized Linux OS image ready to run on your embedded device.
 
+<img width="984" height="482" alt="image" src="https://github.com/user-attachments/assets/1d1f6d42-14ff-4de1-b406-076b6814b965" />
 
 # 🔄 Flow Diagram Explanation: Yocto Project
 
