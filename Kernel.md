@@ -34,7 +34,9 @@
 🔹 When you press the power button:
 
 - Electricity flows to motherboard, CPU, RAM, etc.
+
 - CPU starts running from a fixed address (on x86: FFFF:0000)
+
 - It looks for firmware — which is *BIOS* or *UEFI*
 
 📌 This is not software yet, it's *pre-installed on the motherboard*.
@@ -46,9 +48,13 @@
 🔹 BIOS (Legacy) or UEFI (Modern firmware):
 
 - Performs *POST* (Power-On Self Test)
+
 - Checks RAM, CPU, keyboard, etc.
+
 - Finds the bootable device (HDD/SSD/USB)
+
 - Loads first 512 bytes (MBR) from disk (in BIOS)
+
 - Or loads .efi file from EFI partition (in UEFI)
 
 📌 This firmware is responsible for *finding and starting the bootloader*.
