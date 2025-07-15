@@ -1,4 +1,4 @@
-# 🔧 What is Bootloader?
+# WHAT IS BOOTLOADER?
 
 - A **bootloader** is a small program that:
 
@@ -9,7 +9,7 @@
 - Gives control to the **CPU** to start the OS
 
 ---
-# Bootloader Architecture
+# BOOTLOADER ARCHITECTURE
 
 ```text
 
