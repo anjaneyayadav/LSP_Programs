@@ -1,16 +1,15 @@
 # 🔧 What is Bootloader?
-```
+
 A **bootloader** is a small program that:
 
-- Runs **before the operating system starts**
+Runs **before the operating system starts**
 
-- Loads the **OS kernel** into memory
+Loads the **OS kernel** into memory
 
-- Gives control to the **CPU** to start the OS
+Gives control to the **CPU** to start the OS
 
-```
-
-# 🧱 Bootloader Architecture
+---
+# Bootloader Architecture
 
 ```text
 
