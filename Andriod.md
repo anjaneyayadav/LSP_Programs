@@ -6,8 +6,8 @@
 
 | **#** | **Feature / Module**             | **Android**                                                                 | **Linux**                                                                  |
 |-------|----------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| 1     | **Bionic C Library**             | **Bionic C** (lightweight, faster, optimized for low memory/CPU)       | **glibc** (fully featured but larger and slower to load)              |
-| 2     | **Scheduler - CFS**              | **Completely Fair Scheduler (CFS)** with vruntime and nice values      | Also **CFS**, replaces older Round Robin/Priority scheduling          |
+| 1     | **C Library**             | **Bionic C** (lightweight, faster, optimized for low memory/CPU)       | **glibc** (fully featured but larger and slower to load)              |
+| 2     | **Scheduler - CFS**              | **Completely Fair Scheduler (CFS)**  | Also **CFS**, replaces older Round Robin/Priority scheduling          |
 |       |                                  | Red-Black Tree based – Leftmost node = smallest `vruntime`                 | Same mechanism                                                             |
 |       |                                  | `vruntime = CPU_time × weight` based on nice value                         | Same concept with `nice` values (-20 to +19)                               |
 | 3     | **Low Memory Management**        | **Low Memory Killer (LMK)** to kill background/cached apps early      |**OOM Killer** (Out Of Memory) only when system is completely out     |
