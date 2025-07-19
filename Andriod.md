@@ -79,6 +79,8 @@
 
 
 
+
+
 # ✅ Android vs Linux Architecture – Key Component Comparison
 
 | **#** | **Component**                     | **Android**                                                                 | **Linux**                                                                   |
