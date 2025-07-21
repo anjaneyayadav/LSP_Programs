@@ -78,6 +78,56 @@
 
 <img width="1092" height="588" alt="image" src="https://github.com/user-attachments/assets/231f67ca-02d9-4dd3-b616-acf73a070a1e" />
 
+---
+
+## 🔽 1. Linux Kernel
+
+1. This is the base of Android that directly manages hardware like CPU, memory, and devices.  
+2. It includes drivers for camera, audio, Bluetooth, and handles memory, power, and process management.
+
+---
+
+## 🟨 2. Native Daemons & Libraries
+
+1. These are background system services and C/C++ based native libraries used for core functionality.  
+2. For example, `netd` handles network operations and `SQLite` is used by apps to store data locally.
+
+---
+
+## 🟥 3. Hardware Abstraction Layer (HAL)
+
+1. HAL acts as a bridge between the Android OS and hardware components.  
+2. It ensures Android works consistently across different hardware like various cameras or sensors.
+
+---
+
+## 🔵 4. Android Runtime (ART)
+
+1. Android Runtime executes app code and manages memory using JIT and AOT compilation.  
+2. It runs `.dex` files and automatically performs garbage collection to free unused memory.
+
+---
+
+## 🟦 5. Android System Services
+
+1. These are essential services like `ActivityManager`, `LocationManager`, and `WindowManager`.  
+2. Apps use these services in the background to manage activities, get location, or show windows.
+
+---
+
+## 🟩 6. Android Framework
+
+1. This layer provides developers with reusable APIs to build apps using Java or Kotlin.  
+2. It contains pre-built components like buttons, views, services, and content providers.
+
+---
+
+## 🟪 7. Applications
+
+1. These are the user-facing apps like Instagram, WhatsApp, or the Phone app.  
+2. Apps interact with the Android framework, services, HAL, and kernel to perform their tasks.
+
+---
 
 
 
