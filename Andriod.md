@@ -74,7 +74,9 @@
 - Sends/receives Bluetooth signals (radio frequency).
 - Handles actual wireless data communication.
 
+## Android Architecture
 
+<img width="1092" height="588" alt="image" src="https://github.com/user-attachments/assets/231f67ca-02d9-4dd3-b616-acf73a070a1e" />
 
 
 
