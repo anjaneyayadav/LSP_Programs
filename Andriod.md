@@ -143,6 +143,8 @@
 | 4️⃣   | **WakeLocks**                   | **WakeLock API is available** – apps can keep CPU/screen awake              | **No WakeLock API** – system sleep needs to be managed manually             |
 | 5️⃣   | **IPC Mechanism**               | Uses **Binder IPC** – fast, secure, client-server communication (RPC style) | Uses **System V IPC** – includes pipes, message queues, shared memory       |
 | 6️⃣   | **Hardware Abstraction Layer (HAL)** | Strong **HAL layer** – provides standardized interface to hardware         | **No dedicated HAL** – applications access hardware directly (via `/dev`)   |
-| Runtime / VM  | Uses ART/Dalvik VM to run apps          | No VM by default; runs apps natively  |
+| 7️⃣	| Runtime / VM                        | Uses ART/Dalvik VM to run apps                                                | No VM by default; runs apps natively  |
+
+
 
 
